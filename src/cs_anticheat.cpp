@@ -28,16 +28,14 @@ public:
     {
         static std::vector<ChatCommand> anticheatCommandTable =
         {
-            { "global",         SEC_GAMEMASTER,     true,   &HandleAntiCheatGlobalCommand,  "" },
-            { "player",         SEC_GAMEMASTER,     true,   &HandleAntiCheatPlayerCommand,  "" },
-            { "delete",         SEC_ADMINISTRATOR,  true,   &HandleAntiCheatDeleteCommand,  "" },
-            { "jail",           SEC_GAMEMASTER,     false,  &HandleAnticheatJailCommand,    "" },
-            { "warn",           SEC_GAMEMASTER,     true,   &HandleAnticheatWarnCommand,    "" }
+            { "jail",           RBAC_PERM_COMMAND_BC_ANTICHEAT_HANDLE,     false,  &HandleAnticheatJailCommand,    "" },
+            { "listen",         RBAC_PERM_COMMAND_BC_ANTICHEAT_LISTEN,     false,  &HandleAntiCheatListenCommand,  "" },
+            { "warn",           RBAC_PERM_COMMAND_BC_ANTICHEAT_HANDLE,     true,   &HandleAnticheatWarnCommand,    "" }
         };
 
         static std::vector<ChatCommand> commandTable =
         {
-            { "anticheat",      SEC_GAMEMASTER,     true,   NULL, "",  anticheatCommandTable},
+            { "anticheat",      RBAC_PERM_COMMAND_BC_ANTICHEAT,     true,   NULL, "",  anticheatCommandTable},
         };
 
         return commandTable;
