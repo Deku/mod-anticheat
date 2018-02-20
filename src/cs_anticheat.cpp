@@ -28,8 +28,9 @@ public:
     {
         static std::vector<ChatCommand> anticheatCommandTable =
         {
+            { "player",         RBAC_PERM_COMMAND_BC_ANTICHEAT_LISTEN,     true,   &HandleAntiCheatPlayerCommand,  "" },
+            { "delete",         RBAC_PERM_COMMAND_BC_ANTICHEAT_HANDLE,     true,   &HandleAntiCheatDeleteCommand,  "" },
             { "jail",           RBAC_PERM_COMMAND_BC_ANTICHEAT_HANDLE,     false,  &HandleAnticheatJailCommand,    "" },
-            { "listen",         RBAC_PERM_COMMAND_BC_ANTICHEAT_LISTEN,     false,  &HandleAntiCheatListenCommand,  "" },
             { "warn",           RBAC_PERM_COMMAND_BC_ANTICHEAT_HANDLE,     true,   &HandleAnticheatWarnCommand,    "" }
         };
 
